@@ -8,14 +8,18 @@ This repository provides a Claude Code plugin marketplace with skills (agents) f
 
 ## Installation
 
-Users can install this plugin marketplace and its skills with:
+Users can install this plugin marketplace and individual plugins with:
 
 ```bash
 # Add the marketplace
 /plugin marketplace add nealcaren/sociology-analysis-agents
 
-# Install the plugin
-/plugin install sociology-analysis@sociology-analysis
+# Install only the plugins you need
+/plugin install r-analyst@sociology-analysis
+/plugin install stata-analyst@sociology-analysis
+/plugin install interview-analyst@sociology-analysis
+/plugin install abductive-analyst@sociology-analysis
+/plugin install text-analyst@sociology-analysis
 ```
 
 ## Available Skills
@@ -83,29 +87,33 @@ All skills follow the same phased structure with pauses between phases:
 
 ```
 .claude-plugin/
-└── marketplace.json          # Plugin marketplace definition
+└── marketplace.json          # Plugin marketplace definition (5 plugins)
 
-plugins/sociology-analysis/
-└── skills/
-    ├── r-analyst/
-    │   ├── SKILL.md          # Main R analyst skill
-    │   ├── phases/           # Phase agent files
-    │   └── techniques/       # R method reference guides
-    │
-    ├── stata-analyst/
-    │   ├── SKILL.md          # Main Stata analyst skill
-    │   ├── phases/           # Phase agent files
-    │   └── techniques/       # Stata method reference guides
-    │
-    ├── interview-analyst/
-    │   ├── SKILL.md          # Main interview analyst skill
-    │   └── phases/           # Phase agent files
-    │
-    ├── abductive-analyst/
-    │   ├── SKILL.md          # Main abductive analyst skill
-    │   └── phases/           # Phase agent files (7 phases)
-    │
-    └── text-analyst/
+plugins/
+├── r-analyst/
+│   └── skills/r-analyst/
+│       ├── SKILL.md          # Main R analyst skill
+│       ├── phases/           # Phase agent files
+│       └── techniques/       # R method reference guides
+│
+├── stata-analyst/
+│   └── skills/stata-analyst/
+│       ├── SKILL.md          # Main Stata analyst skill
+│       ├── phases/           # Phase agent files
+│       └── techniques/       # Stata method reference guides
+│
+├── interview-analyst/
+│   └── skills/interview-analyst/
+│       ├── SKILL.md          # Main interview analyst skill
+│       └── phases/           # Phase agent files
+│
+├── abductive-analyst/
+│   └── skills/abductive-analyst/
+│       ├── SKILL.md          # Main abductive analyst skill
+│       └── phases/           # Phase agent files (7 phases)
+│
+└── text-analyst/
+    └── skills/text-analyst/
         ├── SKILL.md          # Main text analyst skill
         ├── phases/           # Phase agent files
         ├── concepts/         # Method concepts (language-agnostic)
@@ -159,12 +167,13 @@ prompt: Read phases/phase1-data.md and execute for [user's project]
 
 ## Development Conventions
 
-### Adding New Skills
+### Adding New Plugins
 
-1. Create `plugins/sociology-analysis/skills/[skill-name]/SKILL.md` with YAML frontmatter
+1. Create `plugins/[plugin-name]/skills/[skill-name]/SKILL.md` with YAML frontmatter
 2. Create `phases/` directory with phase agent files
 3. Optionally create `techniques/` for reference guides
-4. Follow the pause-between-phases pattern
+4. Add plugin entry to `.claude-plugin/marketplace.json`
+5. Follow the pause-between-phases pattern
 
 ### SKILL.md Format
 

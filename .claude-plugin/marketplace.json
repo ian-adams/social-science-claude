@@ -9,15 +9,63 @@
   },
   "plugins": [
     {
-      "name": "sociology-analysis",
-      "source": "./plugins/sociology-analysis",
-      "description": "Publication-ready analysis workflows for sociology research: R statistical analysis, Stata analysis, interview analysis, abductive analysis, and computational text analysis (R/Python). Each skill guides you through systematic, phased workflows with pauses for user review.",
+      "name": "r-analyst",
+      "source": "./plugins/r-analyst",
+      "description": "R statistical analysis for publication-ready sociology research. Phased workflow for DiD, IV, matching, panel methods, and more with pauses for user review.",
       "version": "1.0.0",
       "author": {
         "name": "Neal Caren"
       },
       "license": "MIT",
-      "keywords": ["sociology", "statistics", "qualitative", "text-analysis", "research"],
+      "keywords": ["R", "statistics", "econometrics", "sociology", "research"],
+      "strict": false
+    },
+    {
+      "name": "stata-analyst",
+      "source": "./plugins/stata-analyst",
+      "description": "Stata statistical analysis for publication-ready sociology research. Phased workflow for DiD, IV, matching, panel methods, and more with pauses for user review.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Neal Caren"
+      },
+      "license": "MIT",
+      "keywords": ["Stata", "statistics", "econometrics", "sociology", "research"],
+      "strict": false
+    },
+    {
+      "name": "interview-analyst",
+      "source": "./plugins/interview-analyst",
+      "description": "Pragmatic qualitative analysis for interview data. Supports theory-informed or data-first approaches with systematic coding, quality indicators, and publication-ready synthesis.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Neal Caren"
+      },
+      "license": "MIT",
+      "keywords": ["qualitative", "interviews", "coding", "sociology", "research"],
+      "strict": false
+    },
+    {
+      "name": "abductive-analyst",
+      "source": "./plugins/abductive-analyst",
+      "description": "Abductive analysis (Timmermans & Tavory) for theory-generating qualitative research. Theory-first approach with anomaly detection, theoretical casing, and rhetorical abduction for publication.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Neal Caren"
+      },
+      "license": "MIT",
+      "keywords": ["qualitative", "abduction", "theory", "sociology", "research"],
+      "strict": false
+    },
+    {
+      "name": "text-analyst",
+      "source": "./plugins/text-analyst",
+      "description": "Computational text analysis using R or Python. Topic models (LDA, STM, BERTopic), sentiment analysis, classification, and embeddings with systematic validation.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Neal Caren"
+      },
+      "license": "MIT",
+      "keywords": ["text-analysis", "NLP", "topic-models", "sociology", "research"],
       "strict": false
     }
   ]

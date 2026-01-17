@@ -8,13 +8,17 @@ A Claude Code plugin marketplace with skills for rigorous quantitative and quali
 # Add this marketplace to Claude Code
 /plugin marketplace add nealcaren/sociology-analysis-agents
 
-# Install the sociology-analysis plugin
-/plugin install sociology-analysis@sociology-analysis
+# Install only the plugins you need
+/plugin install r-analyst@sociology-analysis
+/plugin install stata-analyst@sociology-analysis
+/plugin install interview-analyst@sociology-analysis
+/plugin install abductive-analyst@sociology-analysis
+/plugin install text-analyst@sociology-analysis
 ```
 
-## Available Skills
+## Available Plugins
 
-After installation, invoke any skill:
+Each plugin provides a single focused skill. Install only what you need:
 
 | Skill | Invocation | Description |
 |-------|------------|-------------|
@@ -98,29 +102,33 @@ Phase 5: Output → Publication-ready tables, figures, replication
 
 ```
 .claude-plugin/
-└── marketplace.json              # Plugin marketplace definition
+└── marketplace.json              # Plugin marketplace definition (5 plugins)
 
-plugins/sociology-analysis/
-└── skills/
-    ├── r-analyst/
-    │   ├── SKILL.md              # R orchestrator
-    │   ├── phases/               # Phase agents
-    │   └── techniques/           # R code reference guides
-    │
-    ├── stata-analyst/
-    │   ├── SKILL.md              # Stata orchestrator
-    │   ├── phases/               # Phase agents
-    │   └── techniques/           # Stata code reference guides
-    │
-    ├── interview-analyst/
-    │   ├── SKILL.md              # Interview orchestrator
-    │   └── phases/               # Phase agents
-    │
-    ├── abductive-analyst/
-    │   ├── SKILL.md              # Abductive analysis orchestrator
-    │   └── phases/               # Phase agents (7 phases)
-    │
-    └── text-analyst/
+plugins/
+├── r-analyst/
+│   └── skills/r-analyst/
+│       ├── SKILL.md              # R orchestrator
+│       ├── phases/               # Phase agents
+│       └── techniques/           # R code reference guides
+│
+├── stata-analyst/
+│   └── skills/stata-analyst/
+│       ├── SKILL.md              # Stata orchestrator
+│       ├── phases/               # Phase agents
+│       └── techniques/           # Stata code reference guides
+│
+├── interview-analyst/
+│   └── skills/interview-analyst/
+│       ├── SKILL.md              # Interview orchestrator
+│       └── phases/               # Phase agents
+│
+├── abductive-analyst/
+│   └── skills/abductive-analyst/
+│       ├── SKILL.md              # Abductive analysis orchestrator
+│       └── phases/               # Phase agents (7 phases)
+│
+└── text-analyst/
+    └── skills/text-analyst/
         ├── SKILL.md              # Text analysis orchestrator
         ├── phases/               # Phase agents
         ├── concepts/             # Method concepts (language-agnostic)
