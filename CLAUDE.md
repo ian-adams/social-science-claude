@@ -4,19 +4,34 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Purpose
 
-This repository provides Claude Code skills (agents) for rigorous research analysis. Each skill guides users through a structured, phased workflow with pauses for user input at each stage.
+This repository provides a Claude Code plugin marketplace with skills (agents) for rigorous social science research analysis. Each skill guides users through a structured, phased workflow with pauses for user input at each stage.
+
+## Installation
+
+Users can install this plugin marketplace and its skills with:
+
+```bash
+# Add the marketplace
+/plugin marketplace add nealcaren/sociology-analysis-agents
+
+# Install the plugin
+/plugin install sociology-analysis@sociology-analysis
+```
 
 ## Available Skills
+
+After installation, invoke skills with:
 
 | Skill | Purpose | Invocation |
 |-------|---------|------------|
 | **R Analyst** | Statistical analysis in R for publication | `/r-analyst` |
 | **Stata Analyst** | Statistical analysis in Stata for publication | `/stata-analyst` |
 | **Interview Analyst** | Qualitative analysis of interview data | `/interview-analyst` |
+| **Text Analyst** | Computational text analysis (R/Python) | `/text-analyst` |
 
 ## Unified Phased Architecture
 
-All three skills follow the same phased structure with pauses between phases:
+All skills follow the same phased structure with pauses between phases:
 
 ### Statistical Analysis (R & Stata)
 
@@ -40,38 +55,45 @@ All three skills follow the same phased structure with pauses between phases:
 | **4: Quality Check** | Evaluate against quality indicators | User addresses gaps |
 | **5: Synthesis** | Integrate into coherent argument | Analysis complete |
 
-## Folder Structure
+### Text Analysis (R/Python)
+
+| Phase | Goal | Pause Point |
+|-------|------|-------------|
+| **0: Research Design** | Method selection, language choice | User confirms design |
+| **1: Corpus Preparation** | Load, clean, explore text | User reviews preprocessing |
+| **2: Specification** | Document preprocessing, parameters | User approves specification |
+| **3: Analysis** | Run topic models, classifiers, etc. | User reviews results |
+| **4: Validation** | Human validation, diagnostics | User assesses validity |
+| **5: Output** | Publication-ready outputs | Analysis complete |
+
+## Repository Structure
 
 ```
-skills/
-├── r-analyst.md                 # R orchestrator
-├── r-phases/                    # R phase agents
-│   ├── phase0-design.md
-│   ├── phase1-data.md
-│   ├── phase2-specification.md
-│   ├── phase3-analysis.md
-│   ├── phase4-robustness.md
-│   └── phase5-output.md
-├── r-statistical-techniques/    # R method reference guides
-│
-├── stata-analyst.md             # Stata orchestrator
-├── stata-phases/                # Stata phase agents
-│   ├── phase0-design.md
-│   ├── phase1-data.md
-│   ├── phase2-specification.md
-│   ├── phase3-analysis.md
-│   ├── phase4-robustness.md
-│   └── phase5-output.md
-├── stata-statistical-techniques/ # Stata method reference guides
-│
-├── interview-analyst.md         # Interview orchestrator
-└── interview-phases/            # Interview phase agents
-    ├── phase0-theory.md
-    ├── phase1-immersion.md
-    ├── phase2-coding.md
-    ├── phase3-interpretation.md
-    ├── phase4-quality.md
-    └── phase5-synthesis.md
+.claude-plugin/
+└── marketplace.json          # Plugin marketplace definition
+
+plugins/sociology-analysis/
+└── skills/
+    ├── r-analyst/
+    │   ├── SKILL.md          # Main R analyst skill
+    │   ├── phases/           # Phase agent files
+    │   └── techniques/       # R method reference guides
+    │
+    ├── stata-analyst/
+    │   ├── SKILL.md          # Main Stata analyst skill
+    │   ├── phases/           # Phase agent files
+    │   └── techniques/       # Stata method reference guides
+    │
+    ├── interview-analyst/
+    │   ├── SKILL.md          # Main interview analyst skill
+    │   └── phases/           # Phase agent files
+    │
+    └── text-analyst/
+        ├── SKILL.md          # Main text analyst skill
+        ├── phases/           # Phase agent files
+        ├── concepts/         # Method concepts (language-agnostic)
+        ├── r-techniques/     # R implementation guides
+        └── python-techniques/ # Python implementation guides
 ```
 
 ## Key Commands
@@ -92,6 +114,14 @@ stata -e do filename.do
 which stata || which StataMP || which StataSE
 ```
 
+### Running Python for Text Analysis
+
+```bash
+python script.py
+python -c "import sklearn; print(sklearn.__version__)"
+pip install gensim sentence-transformers bertopic
+```
+
 ## Invoking Phase Agents
 
 Each phase is executed by a sub-agent using the Task tool:
@@ -100,7 +130,7 @@ Each phase is executed by a sub-agent using the Task tool:
 Task: Phase 1 Data Familiarization
 subagent_type: general-purpose
 model: sonnet  # or opus for interpretation phases
-prompt: Read [skill]-phases/phase1-[name].md and execute for [user's project]
+prompt: Read phases/phase1-data.md and execute for [user's project]
 ```
 
 ### Model Recommendations
@@ -114,10 +144,23 @@ prompt: Read [skill]-phases/phase1-[name].md and execute for [user's project]
 
 ### Adding New Skills
 
-1. Create `[skill-name]-analyst.md` orchestrator with phased structure
-2. Create `[skill-name]-phases/` directory with phase agent files
-3. Optionally create `[skill-name]-techniques/` for reference guides
+1. Create `plugins/sociology-analysis/skills/[skill-name]/SKILL.md` with YAML frontmatter
+2. Create `phases/` directory with phase agent files
+3. Optionally create `techniques/` for reference guides
 4. Follow the pause-between-phases pattern
+
+### SKILL.md Format
+
+```yaml
+---
+name: skill-name
+description: Brief description shown in skill listings
+---
+
+# Skill Title
+
+[Skill content...]
+```
 
 ### Phase Agent Structure
 

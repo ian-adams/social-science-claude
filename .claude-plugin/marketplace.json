@@ -1,0 +1,24 @@
+{
+  "name": "sociology-analysis",
+  "owner": {
+    "name": "Neal Caren",
+    "email": "neal.caren@unc.edu"
+  },
+  "metadata": {
+    "description": "Claude Code skills for rigorous quantitative and qualitative analysis in sociology and social sciences"
+  },
+  "plugins": [
+    {
+      "name": "sociology-analysis",
+      "source": "./plugins/sociology-analysis",
+      "description": "Publication-ready analysis workflows for sociology research: R statistical analysis, Stata analysis, interview analysis, and computational text analysis (R/Python). Each skill guides you through systematic, phased workflows with pauses for user review.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Neal Caren"
+      },
+      "license": "MIT",
+      "keywords": ["sociology", "statistics", "qualitative", "text-analysis", "research"],
+      "strict": false
+    }
+  ]
+}

@@ -1,59 +1,29 @@
 # Sociology Analysis Agents for Claude Code
 
-A collection of Claude Code skills for rigorous quantitative and qualitative analysis in sociology and related social sciences. These skills guide you through systematic, publication-ready research workflows.
-
-## Available Skills
-
-| Skill | Description |
-|-------|-------------|
-| **R Statistical Analyst** | Phased quantitative analysis workflow using R (DiD, IV, matching, etc.) |
-| **Stata Statistical Analyst** | Phased quantitative analysis workflow using Stata |
-| **Interview Analyst** | Pragmatic qualitative analysis for interview data |
-
-Each skill uses a **phased workflow** with mandatory pauses between phases for user review and decision-making.
+A Claude Code plugin marketplace with skills for rigorous quantitative and qualitative analysis in sociology and related social sciences. These skills guide you through systematic, publication-ready research workflows.
 
 ## Installation
 
-### Option 1: Add as a skill directory (Recommended)
+```bash
+# Add this marketplace to Claude Code
+/plugin marketplace add nealcaren/sociology-analysis-agents
 
-1. Clone this repo:
-   ```bash
-   git clone https://github.com/YOUR_USERNAME/sociology-analysis-agents.git
-   ```
-
-2. Add the skills to your Claude Code configuration. Edit `~/.claude/settings.json`:
-   ```json
-   {
-     "skills": {
-       "sociology": "/path/to/sociology-analysis-agents/skills"
-     }
-   }
-   ```
-
-3. Use in Claude Code:
-   ```
-   /sociology:r-analyst
-   /sociology:stata-analyst
-   /sociology:interview-analyst
-   ```
-
-### Option 2: Copy to your project
-
-Copy the `skills/` folder into your project directory, then reference in your project's `.claude/settings.json`:
-```json
-{
-  "skills": {
-    "local": "./skills"
-  }
-}
+# Install the sociology-analysis plugin
+/plugin install sociology-analysis@sociology-analysis
 ```
 
-### Option 3: Direct file reference
+## Available Skills
 
-Point Claude Code directly to a skill file:
-```
-Read skills/r-analyst.md and follow the workflow for my analysis
-```
+After installation, invoke any skill:
+
+| Skill | Invocation | Description |
+|-------|------------|-------------|
+| **R Statistical Analyst** | `/r-analyst` | Phased quantitative analysis workflow using R (DiD, IV, matching, etc.) |
+| **Stata Statistical Analyst** | `/stata-analyst` | Phased quantitative analysis workflow using Stata |
+| **Interview Analyst** | `/interview-analyst` | Pragmatic qualitative analysis for interview data |
+| **Text Analyst** | `/text-analyst` | Computational text analysis with R and Python (topic models, sentiment, classification) |
+
+Each skill uses a **phased workflow** with mandatory pauses between phases for user review and decision-making.
 
 ## Workflow Overview
 
@@ -89,32 +59,50 @@ Phase 4: Quality Check → Assess against 5 quality indicators
 Phase 5: Synthesis → Write publication-ready sections
 ```
 
-## What's Included
+### Computational Text Analysis (R/Python)
 
 ```
-skills/
-├── r-analyst.md                 # R orchestrator
-├── r-phases/                    # R phase agents
-│   ├── phase0-design.md
-│   ├── phase1-data.md
-│   ├── phase2-specification.md
-│   ├── phase3-analysis.md
-│   ├── phase4-robustness.md
-│   └── phase5-output.md
-├── r-statistical-techniques/    # R code reference guides
-│   ├── 01_core_econometrics.md  # DiD, IV, matching, etc.
-│   ├── 02_survey_resampling.md
-│   ├── 03_text_ml.md
-│   ├── 04_synthetic_control.md
-│   ├── 05_bayesian_sensitivity.md
-│   ├── 06_visualization.md
-│   ├── 07_best_practices.md
-│   └── 08_nonlinear_models.md
-├── stata-analyst.md             # Stata orchestrator
-├── stata-phases/                # Stata phase agents
-├── stata-statistical-techniques/ # Stata code reference guides
-├── interview-analyst.md         # Interview orchestrator
-└── interview-phases/            # Interview phase agents
+Phase 0: Research Design → Method selection, language choice (R or Python)
+    ↓ [User Review]
+Phase 1: Corpus Preparation → Load, clean, explore text data
+    ↓ [User Review]
+Phase 2: Specification → Document preprocessing, specify parameters
+    ↓ [User Review]
+Phase 3: Analysis → Run topic models, classifiers, sentiment
+    ↓ [User Review]
+Phase 4: Validation → Human validation, diagnostics, robustness
+    ↓ [User Review]
+Phase 5: Output → Publication-ready tables, figures, replication
+```
+
+## Repository Structure
+
+```
+.claude-plugin/
+└── marketplace.json              # Plugin marketplace definition
+
+plugins/sociology-analysis/
+└── skills/
+    ├── r-analyst/
+    │   ├── SKILL.md              # R orchestrator
+    │   ├── phases/               # Phase agents
+    │   └── techniques/           # R code reference guides
+    │
+    ├── stata-analyst/
+    │   ├── SKILL.md              # Stata orchestrator
+    │   ├── phases/               # Phase agents
+    │   └── techniques/           # Stata code reference guides
+    │
+    ├── interview-analyst/
+    │   ├── SKILL.md              # Interview orchestrator
+    │   └── phases/               # Phase agents
+    │
+    └── text-analyst/
+        ├── SKILL.md              # Text analysis orchestrator
+        ├── phases/               # Phase agents
+        ├── concepts/             # Method concepts (language-agnostic)
+        ├── r-techniques/         # R text analysis code guides
+        └── python-techniques/    # Python text analysis code guides
 ```
 
 ## Key Features
@@ -135,11 +123,21 @@ skills/
 - **Evidence selection**: Luminous exemplars, not just typical quotes
 - **Methods transparency**: Detailed templates for sampling, recruitment, saturation
 
+### Text Analysis Skills
+- **Dual-language support**: R for topic models/STM; Python for transformers/BERTopic
+- **Method selection guidance**: Match methods to research questions
+- **Validation required**: Human validation, coherence metrics, robustness checks
+- **Topic modeling**: LDA, STM (R), BERTopic (Python) with K selection guidance
+- **Sentiment analysis**: VADER, lexicon-based, and ML approaches
+- **Supervised classification**: Traditional ML and transformer fine-tuning
+- **Reproducibility**: Documented preprocessing, seeds, package versions
+
 ## Requirements
 
 - [Claude Code CLI](https://claude.ai/code)
 - R (for R skills) or Stata (for Stata skills)
 - Interview transcripts (for interview skill)
+- R and/or Python (for text analysis skill)
 
 ## Contributing
 
