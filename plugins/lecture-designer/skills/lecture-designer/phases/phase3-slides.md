@@ -240,6 +240,36 @@ Remove these distractions:
 - Color draws attention
 - Position matters (top-left is read first)
 
+## Finding Images
+
+The Picture Superiority Effect means images dramatically improve retention. Proactively search for relevant images using free stock photo sites.
+
+**Search Method:**
+1. Use WebSearch with `site:unsplash.com [search terms]` or `site:pexels.com [search terms]`
+2. Search for specific concepts, not generic terms (e.g., "elevator people facing forward" not "social norms")
+3. Provide collection URLs organized by slide so the instructor can browse and download
+
+**Recommended Sources (free, no attribution required):**
+- [Unsplash](https://unsplash.com) — High-quality photos, excellent search
+- [Pexels](https://www.pexels.com) — Good variety, includes videos
+- [Wikimedia Commons](https://commons.wikimedia.org) — Public domain, historical images
+
+**When to Suggest Images:**
+- **Hook slides**: Visual that creates curiosity or emotional connection
+- **Concept introduction**: Concrete example of abstract idea
+- **Examples/cases**: Real-world photos that ground the concept
+- **Full-bleed impact slides**: Single powerful image with minimal text
+
+**Image Suggestion Format:**
+```markdown
+| Slide | Image Idea | Source |
+|-------|------------|--------|
+| Folkways | Elevator with people facing forward | [Unsplash elevator collection](https://unsplash.com/s/photos/elevator) |
+| Subcultures | Van life interior (#vanlife aesthetic) | [Unsplash van interior](https://unsplash.com/s/photos/van-interior) |
+```
+
+**Note:** The instructor downloads and adds images themselves—you provide curated suggestions with direct links to browse.
+
 ## Output Files to Create
 
 1. **slides.qmd** - The complete Quarto reveal.js slide deck with:

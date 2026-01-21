@@ -1,5 +1,5 @@
 {
-  "name": "sociology-analysis",
+  "name": "sociology-analysis-agents",
   "owner": {
     "name": "Neal Caren",
     "email": "neal.caren@unc.edu"
@@ -78,6 +78,18 @@
       },
       "license": "MIT",
       "keywords": ["teaching", "lectures", "slides", "pedagogy", "active-learning"],
+      "strict": false
+    },
+    {
+      "name": "lit-review",
+      "source": "./plugins/lit-review",
+      "description": "Build systematic literature databases using OpenAlex API. Phased workflow for search, screening, snowballing, annotation, and synthesis with structured user interaction.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Neal Caren"
+      },
+      "license": "MIT",
+      "keywords": ["literature-review", "OpenAlex", "bibliography", "systematic-review", "research"],
       "strict": false
     }
   ]

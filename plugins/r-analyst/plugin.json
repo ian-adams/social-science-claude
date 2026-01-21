@@ -1,0 +1,10 @@
+{
+  "name": "r-analyst",
+  "version": "1.0.0",
+  "description": "R statistical analysis for publication-ready sociology research. Phased workflow for DiD, IV, matching, panel methods, and more with pauses for user review.",
+  "author": {
+    "name": "Neal Caren"
+  },
+  "license": "MIT",
+  "keywords": ["R", "statistics", "econometrics", "sociology", "research"]
+}

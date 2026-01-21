@@ -1,0 +1,10 @@
+{
+  "name": "abductive-analyst",
+  "version": "1.0.0",
+  "description": "Abductive analysis (Timmermans & Tavory) for theory-generating qualitative research. Theory-first approach with anomaly detection, theoretical casing, and rhetorical abduction for publication.",
+  "author": {
+    "name": "Neal Caren"
+  },
+  "license": "MIT",
+  "keywords": ["qualitative", "abduction", "theory", "sociology", "research"]
+}

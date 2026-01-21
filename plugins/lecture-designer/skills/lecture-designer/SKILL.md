@@ -113,8 +113,9 @@ The skill produces:
   - Describe all visuals verbally
 - **Speaker Notes**: Write delivery cues, timing, and transitions
 - **Quarto Format**: Use reveal.js syntax with proper structure
+- **Image Suggestions**: Proactively search for relevant images on Unsplash/Pexels using WebSearch (e.g., `site:unsplash.com [concept]`) and provide curated links organized by slide
 
-**Output**: Complete slide deck (.qmd file) with speaker notes.
+**Output**: Complete slide deck (.qmd file) with speaker notes and image suggestions.
 
 > **Pause**: Review slides with instructor.
 
@@ -238,6 +239,7 @@ When the instructor is ready to begin:
 - **15-minute chunks**: Attention requires state changes; this is biology, not preference.
 - **Polls drive learning**: ConcepTests force processing; anonymous responses enable honesty.
 - **Slides are visual aids**: They support the speaker, not replace them. Avoid walls of text.
+- **Images boost retention 6x**: Proactively search Unsplash/Pexels for relevant images and provide curated links.
 - **Pause between phases**: Always stop for instructor input before proceeding.
 - **The instructor decides**: You provide options and recommendations; they choose.
 

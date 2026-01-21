@@ -1,0 +1,10 @@
+{
+  "name": "stata-analyst",
+  "version": "1.0.0",
+  "description": "Stata statistical analysis for publication-ready sociology research. Phased workflow for DiD, IV, matching, panel methods, and more with pauses for user review.",
+  "author": {
+    "name": "Neal Caren"
+  },
+  "license": "MIT",
+  "keywords": ["Stata", "statistics", "econometrics", "sociology", "research"]
+}

@@ -1,0 +1,10 @@
+{
+  "name": "text-analyst",
+  "version": "1.0.0",
+  "description": "Computational text analysis using R or Python. Topic models (LDA, STM, BERTopic), sentiment analysis, classification, and embeddings with systematic validation.",
+  "author": {
+    "name": "Neal Caren"
+  },
+  "license": "MIT",
+  "keywords": ["text-analysis", "NLP", "topic-models", "sociology", "research"]
+}

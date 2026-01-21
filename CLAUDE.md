@@ -15,12 +15,13 @@ Users can install this plugin marketplace and individual plugins with:
 /plugin marketplace add nealcaren/sociology-analysis-agents
 
 # Install only the plugins you need
-/plugin install r-analyst@sociology-analysis
-/plugin install stata-analyst@sociology-analysis
-/plugin install interview-analyst@sociology-analysis
-/plugin install abductive-analyst@sociology-analysis
-/plugin install text-analyst@sociology-analysis
-/plugin install lecture-designer@sociology-analysis
+/plugin install r-analyst@sociology-analysis-agents
+/plugin install stata-analyst@sociology-analysis-agents
+/plugin install interview-analyst@sociology-analysis-agents
+/plugin install abductive-analyst@sociology-analysis-agents
+/plugin install text-analyst@sociology-analysis-agents
+/plugin install lecture-designer@sociology-analysis-agents
+/plugin install lit-review@sociology-analysis-agents
 ```
 
 ## Available Skills
@@ -35,6 +36,7 @@ After installation, invoke skills with:
 | **Abductive Analyst** | Abductive analysis (Timmermans & Tavory) | `/abductive-analyst` |
 | **Text Analyst** | Computational text analysis (R/Python) | `/text-analyst` |
 | **Lecture Designer** | Transform chapters into engaging lectures | `/lecture-designer` |
+| **Lit Review** | Build literature databases via OpenAlex | `/lit-review` |
 
 ## Unified Phased Architecture
 
@@ -95,11 +97,23 @@ All skills follow the same phased structure with pauses between phases:
 | **3: Slide Development** | Quarto reveal.js with speaker notes | Instructor reviews slides |
 | **4: Review & Refinement** | Timing audit, backup plans | Lecture package complete |
 
+### Literature Review (OpenAlex)
+
+| Phase | Goal | Pause Point |
+|-------|------|-------------|
+| **0: Scope Definition** | Define topic, search terms, criteria | User confirms search strategy |
+| **1: Initial Search** | Query OpenAlex, build corpus | User reviews corpus composition |
+| **2: Screening** | Filter with LLM assistance | User reviews borderline cases |
+| **3: Snowballing** | Expand via citation networks | User approves additions |
+| **4: Full Text** | Identify OA sources, download checklist | User obtains missing PDFs |
+| **5: Annotation** | Extract structured information | User reviews extractions |
+| **6: Synthesis** | Generate database, identify gaps | Database complete |
+
 ## Repository Structure
 
 ```
 .claude-plugin/
-└── marketplace.json          # Plugin marketplace definition (6 plugins)
+└── marketplace.json          # Plugin marketplace definition (7 plugins)
 
 plugins/
 ├── r-analyst/
@@ -132,12 +146,18 @@ plugins/
 │       ├── r-techniques/     # R implementation guides
 │       └── python-techniques/ # Python implementation guides
 │
-└── lecture-designer/
-    └── skills/lecture-designer/
-        ├── SKILL.md          # Main lecture designer skill
-        ├── phases/           # Phase agent files
-        ├── pedagogy/         # Teaching methodology guides
-        └── quarto/           # Quarto reveal.js reference
+├── lecture-designer/
+│   └── skills/lecture-designer/
+│       ├── SKILL.md          # Main lecture designer skill
+│       ├── phases/           # Phase agent files
+│       ├── pedagogy/         # Teaching methodology guides
+│       └── quarto/           # Quarto reveal.js reference
+│
+└── lit-review/
+    └── skills/lit-review/
+        ├── SKILL.md          # Main literature review skill
+        ├── phases/           # Phase agent files (7 phases)
+        └── api/              # OpenAlex API reference
 ```
 
 ## Key Commands
