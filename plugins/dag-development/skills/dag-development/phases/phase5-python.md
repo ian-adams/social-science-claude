@@ -1,4 +1,4 @@
-# Phase 4: Python Rendering (uv + networkx)
+# Phase 5: Python Rendering (networkx)
 
 You are rendering a DAG using Python with inline dependencies via `uv`. This is good for scriptable, cross‑platform outputs.
 

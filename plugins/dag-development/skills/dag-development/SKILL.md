@@ -18,79 +18,93 @@ Use this skill when users want to:
 
 ## Core Principles
 
-1. **Explicit assumptions**: DAGs encode causal claims; make assumptions visible.
-2. **Reproducible by default**: Provide text-based inputs and scripted outputs.
-3. **Exportable assets**: Produce SVG/PNG (and PDF where possible).
-4. **Tool choice**: Offer three rendering paths with tradeoffs.
-5. **Minimal styling**: Keep figures simple and journal‑friendly.
+1.  **Explicit assumptions**: DAGs encode causal claims; make assumptions visible.
+2.  **Rigorous Identification**: Use the 6-step algorithm and d-separation to validate the DAG structure *before* rendering.
+3.  **Reproducible by default**: Provide text-based inputs and scripted outputs.
+4.  **Exportable assets**: Produce SVG/PNG (and PDF where possible).
+5.  **Tool choice**: Offer three rendering paths with tradeoffs.
+6.  **Minimal styling**: Keep figures simple and journal‑friendly.
 
 ## Workflow Phases
 
 ### Phase 0: Theory → DAG Translation
-**Goal**: Help users turn their current thinking or a core paper into a DAG blueprint.
+**Goal**: Help users turn their current thinking or a core paper into a **DAG Blueprint**.
 - Clarify the causal question and unit of analysis
 - Translate narratives/mechanisms into nodes and edges
-- Identify confounding, selection, and measurement structures
 - Record assumptions and uncertain edges
 
 **Guide**: `phases/phase0-theory.md`
+**Concepts**: `confounding.md`, `potential_outcomes.md`
 
-> **Pause**: Confirm the DAG blueprint before rendering.
-
----
-
-### Phase 1: Inputs & Format
-**Goal**: Turn the blueprint into render‑ready inputs.
-- Node list and edge list
-- Desired labels (short, readable), node types, and edge styling
-- Output formats (SVG/PNG/PDF) and layout
-
-**Guide**: `phases/phase1-inputs.md`
-
-> **Pause**: Confirm the DAG structure and output target before rendering.
+> **Pause**: Confirm the DAG blueprint before auditing.
 
 ---
 
-### Phase 2: Mermaid Rendering
+### Phase 1: Critique & Identification
+**Goal**: **Validate** the DAG blueprint using formal rules (Shrier & Platt, Greenland).
+- Run the **6-step algorithm** (Check descendants, non-ancestors).
+- Check for **Collider-Stratification Bias**.
+- Identify the **Sufficient Adjustment Set**.
+- Detect threats from unobserved variables.
+
+**Guide**: `phases/phase1-identification.md`
+**Concepts**: `six_step_algorithm.md`, `d_separation.md`, `colliders.md`, `selection_bias.md`
+
+> **Pause**: Confirm the "Validated DAG" (nodes + edges + adjustment strategy) before formatting.
+
+---
+
+### Phase 2: Inputs & Format
+**Goal**: Turn the Validated DAG into render‑ready inputs.
+- Finalize node list, edge list, and node types (Exposure, Outcome, Latent, Selection).
+- Choose output formats (SVG/PNG/PDF) and layout.
+
+**Guide**: `phases/phase2-inputs.md`
+
+> **Pause**: Confirm the DAG inputs and output target before rendering.
+
+---
+
+### Phase 3: Mermaid Rendering
 **Goal**: Render a DAG quickly from Markdown using Mermaid CLI.
 
-**Guide**: `phases/phase2-mermaid.md`
+**Guide**: `phases/phase3-mermaid.md`
 
 > **Pause**: Confirm Mermaid output or move to R/Python.
 
 ---
 
-### Phase 3: R Rendering (ggdag)
+### Phase 4: R Rendering (ggdag)
 **Goal**: Render a DAG using R with ggdag for publication‑quality plots.
 
-**Guide**: `phases/phase3-r.md`
+**Guide**: `phases/phase4-r.md`
 
 > **Pause**: Confirm R output or move to Python.
 
 ---
 
-### Phase 4: Python Rendering (networkx)
+### Phase 5: Python Rendering (networkx)
 **Goal**: Render a DAG using Python with `uv` inline dependencies.
 
-**Guide**: `phases/phase4-python.md`
+**Guide**: `phases/phase5-python.md`
 
 ---
 
 ## Output Expectations
 
 Provide:
-- A DAG blueprint (nodes, edges, assumptions, uncertainties)
-- A DAG source file (Mermaid `.mmd`, R `.R`, or Python `.py`)
-- Rendered figure(s) in SVG/PNG (and PDF when available)
-- A short note describing the rendering path used
+- A **DAG Blueprint** (Phase 0)
+- An **Identification Memo** (Phase 1)
+- A **DAG source file** (Mermaid `.mmd`, R `.R`, or Python `.py`)
+- **Rendered figure(s)** in SVG/PNG (and PDF when available)
 
 ## Invoking Phase Agents
 
 Use the Task tool for each phase:
 
 ```
-Task: Phase 1 Mermaid
+Task: Phase 3 Mermaid
 subagent_type: general-purpose
 model: sonnet
-prompt: Read phases/phase1-mermaid.md and render the user’s DAG
+prompt: Read phases/phase3-mermaid.md and render the user’s DAG
 ```

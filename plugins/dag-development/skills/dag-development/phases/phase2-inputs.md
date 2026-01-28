@@ -1,4 +1,4 @@
-# Phase 1: Inputs & Format
+# Phase 2: Inputs & Format
 
 You are collecting the minimum required inputs to render a DAG figure.
 

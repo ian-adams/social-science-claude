@@ -1,4 +1,4 @@
-# Phase 2: Mermaid Rendering
+# Phase 3: Mermaid Rendering
 
 You are rendering a DAG using Mermaid CLI. Mermaid is best for quick, text‑based diagrams that live in Markdown.
 

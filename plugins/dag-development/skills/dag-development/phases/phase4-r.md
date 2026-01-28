@@ -1,4 +1,4 @@
-# Phase 3: R Rendering (ggdag)
+# Phase 4: R Rendering (ggdag)
 
 You are rendering a DAG using R with `ggdag` (built on ggplot2). This is good for publication‑quality figures.
 
