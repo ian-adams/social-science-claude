@@ -1,0 +1,17 @@
+{
+  "name": "interview-analyst",
+  "description": "Pragmatic qualitative analysis for interview data. Supports theory-informed or data-first approaches with systematic coding, quality indicators, and publication-ready synthesis.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Neal Caren"
+  },
+  "license": "MIT",
+  "keywords": [
+    "qualitative",
+    "interviews",
+    "coding",
+    "sociology",
+    "research"
+  ],
+  "skills": "./skills/"
+}

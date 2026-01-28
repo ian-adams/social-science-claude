@@ -1,0 +1,52 @@
+name: Validate Claude Plugins
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate marketplace and plugin manifests
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          
+          root = Path('.')
+          market_path = root / '.claude-plugin' / 'marketplace.json'
+          if not market_path.exists():
+            raise SystemExit('Missing .claude-plugin/marketplace.json')
+          
+          data = json.loads(market_path.read_text())
+          plugins = data.get('plugins', [])
+          if not plugins:
+            raise SystemExit('No plugins found in marketplace.json')
+          
+          for p in plugins:
+            name = p.get('name')
+            source = p.get('source')
+            if not name or not source:
+              raise SystemExit(f'Plugin entry missing name/source: {p}')
+            if p.get('strict') is not True:
+              raise SystemExit(f'Plugin {name} is not strict:true')
+            
+            plugin_root = (root / source).resolve()
+            manifest = plugin_root / '.claude-plugin' / 'plugin.json'
+            if not manifest.exists():
+              raise SystemExit(f'Missing plugin.json for {name} at {manifest}')
+            
+            manifest_data = json.loads(manifest.read_text())
+            if manifest_data.get('name') != name:
+              raise SystemExit(f'plugin.json name mismatch for {name}')
+            
+            skills_path = manifest_data.get('skills')
+            if not skills_path:
+              raise SystemExit(f'plugin.json missing skills path for {name}')
+            if not (plugin_root / skills_path).exists():
+              raise SystemExit(f'skills path does not exist for {name}: {skills_path}')
+          
+          print('Marketplace and plugin manifests validated.')
+          PY

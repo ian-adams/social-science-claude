@@ -1,0 +1,17 @@
+{
+  "name": "interview-writeup",
+  "description": "Write-up support for qualitative interview research. Guides methods drafting, findings structure, quote use, and revision with quality checks.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Neal Caren"
+  },
+  "license": "MIT",
+  "keywords": [
+    "qualitative",
+    "interviews",
+    "writing",
+    "methods",
+    "sociology"
+  ],
+  "skills": "./skills/"
+}

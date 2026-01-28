@@ -24,7 +24,7 @@
         "sociology",
         "research"
       ],
-      "strict": false
+      "strict": true
     },
     {
       "name": "stata-analyst",
@@ -42,7 +42,7 @@
         "sociology",
         "research"
       ],
-      "strict": false
+      "strict": true
     },
     {
       "name": "interview-analyst",
@@ -60,7 +60,7 @@
         "sociology",
         "research"
       ],
-      "strict": false
+      "strict": true
     },
     {
       "name": "interview-writeup",
@@ -78,7 +78,7 @@
         "methods",
         "sociology"
       ],
-      "strict": false
+      "strict": true
     },
     {
       "name": "abductive-analyst",
@@ -96,7 +96,7 @@
         "sociology",
         "research"
       ],
-      "strict": false
+      "strict": true
     },
     {
       "name": "text-analyst",
@@ -114,7 +114,7 @@
         "sociology",
         "research"
       ],
-      "strict": false
+      "strict": true
     },
     {
       "name": "lecture-designer",
@@ -132,7 +132,7 @@
         "pedagogy",
         "active-learning"
       ],
-      "strict": false
+      "strict": true
     },
     {
       "name": "lit-review",
@@ -150,7 +150,7 @@
         "systematic-review",
         "research"
       ],
-      "strict": false
+      "strict": true
     }
   ]
 }
