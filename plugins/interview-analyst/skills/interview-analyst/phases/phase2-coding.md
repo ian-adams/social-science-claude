@@ -147,6 +147,59 @@ Document your coding process and emerging insights:
 - What remains unclear or puzzling?
 - What should Phase 3 focus on?
 
+### 6. Build Participant Profiles
+
+For each participant, create a profile that captures everything needed for later writeup. This is where you preserve the rich, person-level detail that gets lost if you only organize by code.
+
+```markdown
+## Participant: [Name or Pseudonym]
+
+**Interview**: #[number]
+**Demographics**: [Race/ethnicity], [gender], [age or age range], [other relevant identifiers]
+**Role/Position**: [Role in organization, occupation, committee membership, etc.]
+**Key trajectory**: [1-sentence summary of their arc relevant to your study]
+
+### Extended Quotes (potential anchors)
+Quotes of 3+ sentences that show this person's voice, reasoning, or experience unfolding. These are candidates for deep vignettes in the writeup.
+
+> "[Full quote, preserving the participant's voice and logic]"
+> *Context*: [What prompted this—interview question, topic being discussed]
+> *Codes*: [Which codes apply]
+
+> "[Another extended quote if available]"
+> *Context*: [...]
+
+### Punchy Quotes (potential echoes)
+Shorter quotes (1-2 sentences or memorable phrases) that capture something vividly. These work as prevalence indicators or embedded voice in the writeup.
+
+> "[Short quote]"
+> "[Another short quote]"
+> "[Memorable phrase]"
+
+### In-Vivo Terms
+Distinctive language this participant uses—metaphors, recurring phrases, terms of art.
+- "[term 1]"
+- "[term 2]"
+
+### Emotional Tenor
+[How does this participant come across? Angry, resigned, reflective, defiant? What feelings are expressed or implied?]
+
+### What Makes This Participant Distinctive
+[Why might this person serve as an anchor case for a particular finding? What do they exemplify clearly? Are they typical or a useful outlier?]
+
+### Codes Heavily Present
+- [Code 1]: [brief note on how it manifests]
+- [Code 2]: [brief note]
+```
+
+**Why this matters for writeup**: The interview-writeup skill needs:
+- Full demographics for attribution ("Maria, a 34-year-old Puerto Rican lesbian who co-founded the Latino Caucus...")
+- Extended quotes for anchor vignettes (3-6 sentences showing voice and reasoning)
+- Short quotes for echo patterns (1-2 sentences showing prevalence)
+- Sense of who would exemplify which finding
+
+Building this now—while you're deep in each interview—is far easier than reconstructing it later.
+
 ## Output Files to Create
 
 Save all outputs to `/analysis/phase2-reports/`:
@@ -154,9 +207,11 @@ Save all outputs to `/analysis/phase2-reports/`:
 1. **codebook.md** - Full codebook with all codes documented
 2. **coded-excerpts/** folder with files for each major code:
    - `code-[name].md`
-3. **coding-memo.md** - Reflections on the coding process
-4. **code-frequency-matrix.md** - Which codes appear in which interviews
-5. **phase2-report.md** - Executive summary including:
+3. **participant-profiles/** folder with a file for each participant:
+   - `participant-[name].md` - Demographics, trajectory, extended quotes, punchy quotes, in-vivo terms, what makes them distinctive
+4. **coding-memo.md** - Reflections on the coding process
+5. **code-frequency-matrix.md** - Which codes appear in which interviews
+6. **phase2-report.md** - Executive summary including:
    - Overview of coding structure (number of codes, organization)
    - Most prevalent codes
    - Most analytically interesting codes

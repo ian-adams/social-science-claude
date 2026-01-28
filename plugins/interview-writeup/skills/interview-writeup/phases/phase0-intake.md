@@ -10,7 +10,20 @@ A strong write-up depends on clear claims, structured evidence, and transparent 
 
 Ask users to provide the following materials before drafting.
 
-### Required
+### If Coming from interview-analyst
+
+If the user ran the **interview-analyst** skill first, request these outputs:
+
+| From interview-analyst | Phase | What It Provides |
+|------------------------|-------|------------------|
+| **quote-database.md** | Phase 5 | Quotes organized by finding with luminous exemplars flagged, anchor/echo candidates identified, prevalence noted, full attribution |
+| **participant-profiles/** | Phase 2 | Demographics, trajectories, extended quotes, punchy quotes, in-vivo terms for each participant |
+| **core-argument.md** | Phase 5 | Research question, central argument, contribution |
+| **paper-outline.md** | Phase 5 | Structural outline with findings |
+
+These files are designed to feed directly into writeup. The quote-database.md is the primary handoff—it contains everything needed for the anchor-echo pattern.
+
+### If Starting Fresh (no prior analysis)
 
 | Document | What to Include | Why Needed |
 |----------|-----------------|------------|
@@ -18,6 +31,11 @@ Ask users to provide the following materials before drafting.
 | **Participant table** | Pseudonyms, key demographics (age, race/ethnicity, gender, class, role), any characteristics relevant to analysis | For accurate, rich attribution in quotes |
 | **Main findings** | 3–4 findings they want to present, with brief descriptions | To structure the findings section |
 | **Selected quotes** | Key quotes organized by finding, with speaker identified | The evidence to work with |
+
+**Note on quote format**: For each finding, you need:
+- **1-2 extended quotes** (3-6 sentences) suitable for anchor vignettes—showing participant's voice, reasoning, internal logic
+- **3-5 shorter quotes** (1-2 sentences) suitable for echoes—showing prevalence across participants
+- **Full attribution** for each: name, race/ethnicity, gender, age, role/position, and any study-relevant characteristics
 
 ### Required for Methods Section
 

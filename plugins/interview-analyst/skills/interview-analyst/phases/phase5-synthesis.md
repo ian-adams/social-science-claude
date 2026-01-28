@@ -241,7 +241,70 @@ diverse research team].
 - Broader significance
 - Closing thought
 
-### 7. Create an Evidence Appendix
+### 7. Build the Quote Database for Writeup
+
+This is the key handoff to the interview-writeup skill. Reorganize the person-level material from Phase 2 participant profiles into a finding-level database ready for drafting.
+
+**For each major finding/mechanism:**
+
+```markdown
+# Finding [N]: [Mechanism Name]
+## [Sub-finding if applicable]
+
+### Luminous Exemplar
+The single best quote for opening this section—vivid, captures the mechanism perfectly, memorable.
+
+> "[The quote]"
+> —**[Name]**, [demographics], [role/position]
+> *Context*: [What prompted this quote]
+> *Why luminous*: [What makes this quote exceptional for this finding]
+
+### Anchor Candidates
+Participants who could serve as the deep vignette for this section. For each:
+- **[Name]**: [1-sentence reason they exemplify this finding]
+  - Extended quote available: Yes/No
+  - Trajectory shows mechanism clearly: Yes/No
+  - Social location adds analytical value: [How]
+
+### Echo Candidates
+Shorter quotes showing this pattern across multiple participants:
+
+> "[Short quote]"
+> —**[Name]**, [brief attribution]
+
+> "[Short quote]"
+> —**[Name]**, [brief attribution]
+
+> "[Short quote]"
+> —**[Name]**, [brief attribution]
+
+### Prevalence
+- Pattern appeared in [X] of [Y] participants ([Z]%)
+- Variation by [demographic/position]: [notes]
+
+### Negative Cases / Variation
+- **[Name]**: [How they diverge from the pattern]
+- Explanation for variation: [If known]
+```
+
+**Selection criteria for luminous exemplars:**
+- Does it capture the mechanism in the participant's own voice?
+- Is it vivid and memorable?
+- Does it "show" rather than require extensive explanation?
+- Would a reader remember this quote?
+
+**Anchor vs. Echo distinction:**
+- **Anchor**: Extended quote (3-6 sentences) from one person, developed into a vignette with context, interpretation, and follow-up. Go deep.
+- **Echo**: Short quote (1-2 sentences) showing the same pattern appears in other participants. Show breadth.
+
+**The writeup skill expects:**
+- 1 anchor + 2-3 echoes per subsection
+- Full demographics for attribution
+- Context for extended quotes
+- Prevalence indicators
+- Variation/negative cases flagged
+
+### 8. Create an Evidence Appendix
 
 Compile:
 - Key quotes organized by theme/claim
@@ -256,15 +319,22 @@ Save all outputs to `/analysis/phase5-reports/`:
 
 1. **core-argument.md** - Statement of research question, central argument, contribution
 2. **paper-outline.md** - Detailed structural outline
-3. **evidence-selection.md** - Selected quotes organized by claim
-4. **alternative-explanations.md** - Addressed objections and alternatives
-5. **limitations.md** - Honest assessment of limitations
-6. **draft-introduction.md** - Draft introduction section
-7. **draft-methods.md** - Draft methods section
-8. **draft-findings.md** - Draft findings/analysis sections
-9. **draft-discussion.md** - Draft discussion section
-10. **evidence-appendix.md** - Extended evidence compilation
-11. **phase5-report.md** - Executive summary including:
+3. **quote-database.md** - Quotes organized by finding/mechanism with:
+   - Luminous exemplars flagged
+   - Anchor candidates identified
+   - Echo quotes compiled
+   - Prevalence noted
+   - Attribution complete
+   *(This is the primary handoff to interview-writeup)*
+4. **evidence-selection.md** - Selected quotes organized by claim (legacy format)
+5. **alternative-explanations.md** - Addressed objections and alternatives
+6. **limitations.md** - Honest assessment of limitations
+7. **draft-introduction.md** - Draft introduction section
+8. **draft-methods.md** - Draft methods section
+9. **draft-findings.md** - Draft findings/analysis sections
+10. **draft-discussion.md** - Draft discussion section
+11. **evidence-appendix.md** - Extended evidence compilation
+12. **phase5-report.md** - Executive summary including:
     - Core argument in brief
     - Structure overview
     - Key evidence highlights
