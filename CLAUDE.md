@@ -26,6 +26,7 @@ Users can install this plugin marketplace and individual plugins with:
 /plugin install lit-search@social-data-analysis
 /plugin install lit-synthesis@social-data-analysis
 /plugin install lit-writeup@social-data-analysis
+/plugin install interview-bookends@social-data-analysis
 ```
 
 ## Available Skills
@@ -45,6 +46,7 @@ After installation, invoke skills with:
 | **Lit Search** | Build literature databases via OpenAlex | `/lit-search` |
 | **Lit Synthesis** | Deep reading, theoretical mapping, debate identification | `/lit-synthesis` |
 | **Lit Write-Up** | Draft publication-ready Theory sections | `/lit-writeup` |
+| **Interview Bookends** | Draft introductions and conclusions from theory/findings | `/interview-bookends` |
 
 ## Unified Phased Architecture
 
@@ -153,11 +155,20 @@ Three skills form a complete literature review workflow:
 | **4: Turn** | Craft the gap/contribution pivot | User evaluates turn |
 | **5: Revision** | Calibrate against norms, polish | User approves final |
 
+### Interview Bookends
+
+| Phase | Goal | Pause Point |
+|-------|------|-------------|
+| **0: Intake** | Review inputs, identify cluster, confirm scope | User confirms cluster |
+| **1: Introduction** | Draft introduction matching cluster style | User reviews introduction |
+| **2: Conclusion** | Draft conclusion with all standard elements | User reviews conclusion |
+| **3: Coherence** | Verify promise-delivery alignment, callbacks | User approves coherence |
+
 ## Repository Structure
 
 ```
 .claude-plugin/
-└── marketplace.json          # Plugin marketplace definition (12 plugins)
+└── marketplace.json          # Plugin marketplace definition (13 plugins)
 
 plugins/
 ├── r-analyst/
@@ -220,10 +231,17 @@ plugins/
 │       ├── phases/           # Phase agent files (6 phases)
 │       └── mcp/              # Zotero MCP setup guide
 │
-└── lit-writeup/
-    └── skills/lit-writeup/
-        ├── SKILL.md          # Main literature write-up skill
-        ├── phases/           # Phase agent files (6 phases)
+├── lit-writeup/
+│   └── skills/lit-writeup/
+│       ├── SKILL.md          # Main literature write-up skill
+│       ├── phases/           # Phase agent files (6 phases)
+│       ├── clusters/         # Cluster profile guides (5 styles)
+│       └── techniques/       # Writing technique guides
+│
+└── interview-bookends/
+    └── skills/interview-bookends/
+        ├── SKILL.md          # Main interview-bookends skill
+        ├── phases/           # Phase agent files (4 phases)
         ├── clusters/         # Cluster profile guides (5 styles)
         └── techniques/       # Writing technique guides
 ```

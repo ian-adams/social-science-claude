@@ -1,0 +1,11 @@
+{
+  "name": "interview-bookends",
+  "version": "1.0.0",
+  "description": "Write article introductions and conclusions for sociology interview research. Takes theory and findings sections as input and produces publication-ready framing prose based on genre analysis of 80 articles.",
+  "skills": [
+    {
+      "name": "interview-bookends",
+      "path": "skills/interview-bookends"
+    }
+  ]
+}

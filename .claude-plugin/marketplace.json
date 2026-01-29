@@ -205,6 +205,24 @@
         "research"
       ],
       "strict": true
+    },
+    {
+      "name": "interview-bookends",
+      "source": "./plugins/interview-bookends",
+      "description": "Write article introductions and conclusions for sociology interview research. Takes theory and findings sections as input; uses genre analysis of 80 articles to guide cluster-specific framing.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Neal Caren"
+      },
+      "license": "MIT",
+      "keywords": [
+        "introduction",
+        "conclusion",
+        "bookends",
+        "sociology",
+        "writing"
+      ],
+      "strict": true
     }
   ]
 }
