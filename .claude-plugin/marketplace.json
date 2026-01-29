@@ -223,6 +223,42 @@
         "writing"
       ],
       "strict": true
+    },
+    {
+      "name": "genre-skill-builder",
+      "source": "./plugins/genre-skill-builder",
+      "description": "Meta-skill for creating genre-analysis-based writing skills. Analyzes a corpus of article sections, discovers clusters, and generates complete skills with phases, cluster guides, and techniques.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Neal Caren"
+      },
+      "license": "MIT",
+      "keywords": [
+        "meta-skill",
+        "genre-analysis",
+        "skill-builder",
+        "writing",
+        "research"
+      ],
+      "strict": true
+    },
+    {
+      "name": "methods-writer",
+      "source": "./plugins/methods-writer",
+      "description": "Draft publication-ready Methods sections for interview-based sociology articles. Three pathways (Efficient/Standard/Detailed) based on analysis of 77 Social Problems/Social Forces articles.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Neal Caren"
+      },
+      "license": "MIT",
+      "keywords": [
+        "methods",
+        "interviews",
+        "qualitative",
+        "sociology",
+        "writing"
+      ],
+      "strict": true
     }
   ]
 }

@@ -1,0 +1,6 @@
+{
+  "name": "methods-writer",
+  "version": "1.0.0",
+  "description": "Draft publication-ready Methods sections for interview-based sociology articles. Guides pathway selection, component coverage, and calibration based on analysis of 77 Social Problems/Social Forces articles.",
+  "skills": "./skills/"
+}

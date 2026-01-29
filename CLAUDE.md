@@ -27,6 +27,8 @@ Users can install this plugin marketplace and individual plugins with:
 /plugin install lit-synthesis@social-data-analysis
 /plugin install lit-writeup@social-data-analysis
 /plugin install interview-bookends@social-data-analysis
+/plugin install genre-skill-builder@social-data-analysis
+/plugin install methods-writer@social-data-analysis
 ```
 
 ## Available Skills
@@ -47,6 +49,8 @@ After installation, invoke skills with:
 | **Lit Synthesis** | Deep reading, theoretical mapping, debate identification | `/lit-synthesis` |
 | **Lit Write-Up** | Draft publication-ready Theory sections | `/lit-writeup` |
 | **Interview Bookends** | Draft introductions and conclusions from theory/findings | `/interview-bookends` |
+| **Genre Skill Builder** | Create genre-analysis-based writing skills from a corpus | `/genre-skill-builder` |
+| **Methods Writer** | Draft Methods sections for interview articles (3 pathways) | `/methods-writer` |
 
 ## Unified Phased Architecture
 
@@ -164,11 +168,30 @@ Three skills form a complete literature review workflow:
 | **2: Conclusion** | Draft conclusion with all standard elements | User reviews conclusion |
 | **3: Coherence** | Verify promise-delivery alignment, callbacks | User approves coherence |
 
+### Genre Skill Builder (Meta-Skill)
+
+| Phase | Goal | Pause Point |
+|-------|------|-------------|
+| **0: Scope Definition** | Define target section, select model skill | User confirms scope |
+| **1: Corpus Immersion** | Quantitative profiling of corpus | User reviews statistics |
+| **2: Genre Coding** | Systematic coding of genre features | User reviews codebook |
+| **3: Interpretation** | Pattern analysis, cluster discovery | User confirms clusters |
+| **4: Generation** | Build skill files from templates | User reviews generated skill |
+| **5: Validation** | Quality check, optional testing | Skill ready for use |
+
+### Methods Writer
+
+| Phase | Goal | Pause Point |
+|-------|------|-------------|
+| **0: Assessment** | Gather study info, select pathway | User confirms pathway |
+| **1: Drafting** | Write section following pathway template | User reviews draft |
+| **2: Revision** | Calibrate against benchmarks, polish | Section complete |
+
 ## Repository Structure
 
 ```
 .claude-plugin/
-└── marketplace.json          # Plugin marketplace definition (13 plugins)
+└── marketplace.json          # Plugin marketplace definition (15 plugins)
 
 plugins/
 ├── r-analyst/
@@ -238,11 +261,24 @@ plugins/
 │       ├── clusters/         # Cluster profile guides (5 styles)
 │       └── techniques/       # Writing technique guides
 │
-└── interview-bookends/
-    └── skills/interview-bookends/
-        ├── SKILL.md          # Main interview-bookends skill
-        ├── phases/           # Phase agent files (4 phases)
-        ├── clusters/         # Cluster profile guides (5 styles)
+├── interview-bookends/
+│   └── skills/interview-bookends/
+│       ├── SKILL.md          # Main interview-bookends skill
+│       ├── phases/           # Phase agent files (4 phases)
+│       ├── clusters/         # Cluster profile guides (5 styles)
+│       └── techniques/       # Writing technique guides
+│
+├── genre-skill-builder/
+│   └── skills/genre-skill-builder/
+│       ├── SKILL.md          # Main genre-skill-builder skill
+│       ├── phases/           # Phase agent files (6 phases)
+│       └── templates/        # Skill generation templates
+│
+└── methods-writer/
+    └── skills/methods-writer/
+        ├── SKILL.md          # Main methods-writer skill
+        ├── phases/           # Phase agent files (3 phases)
+        ├── pathways/         # Pathway profiles (Efficient/Standard/Detailed)
         └── techniques/       # Writing technique guides
 ```
 
